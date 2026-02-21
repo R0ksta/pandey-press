@@ -6,7 +6,9 @@
     
     <title>Booking Confirmed | Pandey Press Blackburn</title>
     <meta name="description" content="Your ironing service booking has been received. We will contact you shortly to confirm your drop-off in Blackburn.">
-    <meta name="robots" content="noindex"> <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="robots" content="noindex">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -30,15 +32,18 @@
 
     <main class="flex-grow flex items-center justify-center px-4 py-20">
         <div class="max-w-md w-full text-center">
-            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-10 h-10">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+            <div class="mb-8 flex justify-center">
+                <div class="h-20 w-20 bg-green-50 text-green-600 flex items-center justify-center rounded-full border border-green-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-10 h-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                </div>
             </div>
             <h2 class="text-3xl font-extrabold uppercase tracking-tight mb-4">Request Received!</h2>
             <p class="text-gray-600 mb-10 leading-relaxed">
                 Thank you for choosing Pandey Press. We've received your booking details and will review them shortly.
             </p>
+            
             <div class="bg-gray-50 p-6 rounded-lg mb-10 text-sm text-left border border-gray-100">
                 <h4 class="font-bold uppercase mb-2">Next Steps:</h4>
                 <ol class="list-decimal ml-4 space-y-2 text-gray-600">
@@ -47,14 +52,16 @@
                     <li>Please remember to bring <strong>cash for payment</strong>.</li>
                 </ol>
             </div>
+
             <a href="index.html" class="inline-block bg-black text-white font-bold px-8 py-3 rounded-md hover:bg-gray-800 transition-colors uppercase text-sm tracking-wide">
                 Return to Home
             </a>
         </div>
     </main>
 
-    <footer class="border-t border-gray-200 py-8 text-center text-gray-500 text-sm">
+    <footer class="border-t border-gray-200 py-8 text-center text-gray-500 text-xs">
         <p>&copy; 2026 Pandey Press. All Rights Reserved.</p>
+        <p class="mt-1">info@pandeypress.com</p>
     </footer>
 
 </body>
