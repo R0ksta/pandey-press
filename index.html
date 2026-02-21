@@ -10,6 +10,14 @@
         /* Custom Font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Mobile menu toggle classes */
+        #mobile-menu {
+            display: none;
+        }
+        #mobile-menu.active {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-white text-black antialiased">
@@ -24,25 +32,41 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6.75h4.5a1.5 1.5 0 0 1 1.5 1.5v1.5" />
                         </svg>
                     </div>
-                    <h1 class="text-2xl font-bold tracking-tighter uppercase">Pandey Press</h1>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-tighter uppercase">Pandey Press</h1>
                 </div>
+
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#how-it-works" class="text-gray-600 hover:text-black font-medium transition-colors">How It Works</a>
                     <a href="#pricing" class="text-gray-600 hover:text-black font-medium transition-colors">Price List</a>
                     <a href="service-policy.html" class="text-gray-600 hover:text-black font-medium transition-colors">Service Policy</a>
                     <a href="#book-now" class="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 transition-colors font-semibold">Book Now</a>
                 </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-black focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-4">
+            <a href="#how-it-works" class="block text-gray-600 font-medium py-2">How It Works</a>
+            <a href="#pricing" class="block text-gray-600 font-medium py-2">Price List</a>
+            <a href="service-policy.html" class="block text-gray-600 font-medium py-2">Service Policy</a>
+            <a href="#book-now" class="block bg-black text-white px-6 py-3 rounded-md text-center font-semibold">Book Now</a>
         </div>
     </nav>
 
-    <section class="bg-black text-white py-24 px-4 sm:px-6 lg:px-8 text-center">
+    <section class="bg-black text-white py-20 md:py-32 px-4 sm:px-6 lg:px-8 text-center">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 uppercase">Hate Ironing?<br>Save Your Time!</h2>
-            <p class="text-xl md:text-2xl text-gray-300 mb-10 font-light">
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 uppercase leading-tight">Hate Ironing?<br>Save Your Time!</h2>
+            <p class="text-lg md:text-2xl text-gray-300 mb-10 font-light leading-relaxed">
                 Let us take the pain away by doing your ironing. Spend more time doing what you enjoy. <br class="hidden md:block">Drop off your garments at our Blackburn location, and we'll press them to perfection.
             </p>
-            <a href="#book-now" class="inline-block bg-white text-black text-lg font-bold px-10 py-4 rounded-md hover:bg-gray-200 transition-colors">
+            <a href="#book-now" class="inline-block bg-white text-black text-lg font-bold px-10 py-4 rounded-md hover:bg-gray-200 transition-colors w-full md:w-auto">
                 Book Your Drop-Off
             </a>
         </div>
@@ -51,19 +75,19 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold uppercase tracking-wide">Why Choose Us?</h3>
+                <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">Why Choose Us?</h3>
                 <div class="w-24 h-1 bg-black mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                <div>
+                <div class="px-4">
                     <h4 class="text-xl font-bold mb-3 uppercase">Quality Guaranteed</h4>
                     <p class="text-gray-600">Attention to detail ensures every crease is perfect. We care for your garments as if they were our own using advanced industrial irons.</p>
                 </div>
-                <div>
+                <div class="px-4">
                     <h4 class="text-xl font-bold mb-3 uppercase">Affordable Services</h4>
                     <p class="text-gray-600">We provide premium quality at highly competitive prices, making professional ironing accessible for your everyday routine.</p>
                 </div>
-                <div>
+                <div class="px-4">
                     <h4 class="text-xl font-bold mb-3 uppercase">Local Convenience</h4>
                     <p class="text-gray-600">Conveniently located in Blackburn, simply drop off your items and pick them up when they are crisp, fresh, and ready to wear.</p>
                 </div>
@@ -74,7 +98,7 @@
     <section id="how-it-works" class="py-20 bg-gray-50 border-t border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold uppercase tracking-wide">How Does It Work?</h3>
+                <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">How Does It Work?</h3>
                 <p class="mt-4 text-gray-600">A simple, stress-free procedure to get your clothes looking sharp in Melbourne.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -100,17 +124,17 @@
     <section id="pricing" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold uppercase tracking-wide">Ironing Price List</h3>
+                <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">Ironing Price List</h3>
                 <div class="w-24 h-1 bg-black mx-auto mt-4 mb-6"></div>
                 <p class="text-gray-600 text-sm">Prices are per item. Minimum charge for ironing is $30.00. <br><strong>Drop-off and Pick-up only at our Blackburn location.</strong></p>
             </div>
 
-            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <table class="w-full text-left border-collapse">
+            <div class="bg-white border border-gray-200 rounded-lg overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[500px]">
                     <thead>
                         <tr class="bg-black text-white">
-                            <th class="py-4 px-6 font-semibold uppercase text-sm">Garment Type</th>
-                            <th class="py-4 px-6 font-semibold uppercase text-sm text-right">Price (AUD)</th>
+                            <th class="py-4 px-6 font-semibold uppercase text-xs md:text-sm">Garment Type</th>
+                            <th class="py-4 px-6 font-semibold uppercase text-xs md:text-sm text-right">Price (AUD)</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
@@ -140,23 +164,23 @@
     <section id="book-now" class="py-20 bg-black text-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold uppercase tracking-wide">Book Your Service</h3>
+                <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">Book Your Service</h3>
                 <p class="mt-4 text-gray-400">Let us know you are coming by filling out the form below.</p>
-                <p class="mt-2 text-red-400 font-semibold text-sm uppercase tracking-wide">Please do not drop off or pick up items until an email confirmation has been provided.</p>
+                <p class="mt-2 text-red-400 font-semibold text-xs md:text-sm uppercase tracking-wide px-4">Please do not drop off or pick up items until an email confirmation has been provided.</p>
             </div>
             
-            <form name="booking" method="POST" data-netlify="true" action="/success.html" class="bg-white text-black p-8 rounded-lg shadow-xl">
+            <form name="booking" method="POST" data-netlify="true" action="/success.html" class="bg-white text-black p-6 md:p-8 rounded-lg shadow-xl mx-2">
                 <input type="hidden" name="form-name" value="booking" />
                 <input type="hidden" name="estimated_cost" id="estimated_cost_input" value="$0.00" />
                 <input type="hidden" name="estimator_breakdown" id="estimator_breakdown_input" value="No items estimated." />
                 
-                <div class="bg-gray-50 p-6 rounded-lg mb-8 border border-gray-200">
+                <div class="bg-gray-50 p-4 md:p-6 rounded-lg mb-8 border border-gray-200">
                     <h4 class="text-lg font-bold mb-4 uppercase text-center md:text-left">Quick Cost Estimator</h4>
                     
                     <div class="flex flex-col md:flex-row gap-4 mb-4">
                         <div class="flex-grow">
                             <label class="block text-xs font-semibold mb-1 text-gray-600">Select Item</label>
-                            <select id="item-select" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-black outline-none bg-white">
+                            <select id="item-select" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-black outline-none bg-white text-sm">
                                 <option value="3.80" data-name="Shirts / Blouses">Shirts / Blouses ($3.80)</option>
                                 <option value="2.50" data-name="T-shirts / Polos">T-shirts / Polos ($2.50)</option>
                                 <option value="3.80" data-name="Pants">Pants ($3.80)</option>
@@ -189,7 +213,7 @@
 
                     <div class="flex justify-between items-center border-t border-gray-300 pt-4 mt-2">
                         <span class="font-semibold text-sm text-gray-600">Estimated Total:</span>
-                        <span class="text-2xl font-bold text-black" id="estimate-display">$0.00</span>
+                        <span class="text-xl md:text-2xl font-bold text-black" id="estimate-display">$0.00</span>
                     </div>
                     <p class="text-xs text-gray-500 mt-2">Only cash is accepted during drop off.</p>
                 </div>
@@ -230,7 +254,7 @@
                     <label class="block text-sm font-semibold mb-2" for="notes">Special Instructions (Optional)</label>
                     <textarea id="notes" name="notes" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" placeholder="E.g., Please fold shirts instead of hanging."></textarea>
                 </div>
-                <button type="submit" class="w-full bg-black text-white font-bold py-4 rounded-md hover:bg-gray-800 transition-colors uppercase tracking-wide">
+                <button type="submit" class="w-full bg-black text-white font-bold py-4 rounded-md hover:bg-gray-800 transition-colors uppercase tracking-wide text-sm md:text-base">
                     Submit Booking Request
                 </button>
             </form>
@@ -239,35 +263,51 @@
 
     <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
                 <div>
-                    <h5 class="text-xl font-bold uppercase mb-4">Pandey Press</h5>
-                    <p class="text-gray-600">Professional domestic ironing services bringing quality and crisp perfection to Melbourne.</p>
+                    <h5 class="text-lg font-bold uppercase mb-4 tracking-wider">Pandey Press</h5>
+                    <p class="text-gray-600 leading-relaxed">Professional domestic ironing services bringing quality and crisp perfection to Melbourne.</p>
                 </div>
                 <div>
-                    <h5 class="text-xl font-bold uppercase mb-4">Business Hours</h5>
+                    <h5 class="text-lg font-bold uppercase mb-4 tracking-wider">Business Hours</h5>
                     <ul class="text-gray-600 space-y-2">
                         <li>Monday - Friday: 17:00 – 21:00</li>
                         <li>Saturday - Sunday: 09:00 – 17:00</li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="text-xl font-bold uppercase mb-4">Contact & Location</h5>
+                    <h5 class="text-lg font-bold uppercase mb-4 tracking-wider">Contact & Location</h5>
                     <ul class="text-gray-600 space-y-2">
-                        <li>Email: <a href="mailto:admin@pandeypress.com" class="hover:text-black">admin@pandeypress.com</a></li>
+                        <li>Email: <a href="mailto:info@pandeypress.com" class="hover:text-black transition-colors underline decoration-gray-300">info@pandeypress.com</a></li>
                         <li>Location: 14 Ernest Street</li>
                         <li>Blackburn, VIC 3130</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm">
                 <p>&copy; 2026 Pandey Press. All Rights Reserved.</p>
-                <a href="service-policy.html" class="mt-4 md:mt-0 hover:text-black transition-colors font-medium">Read Our Service Policy</a>
+                <a href="service-policy.html" class="mt-4 md:mt-0 hover:text-black transition-colors font-medium underline decoration-gray-200">Read Our Service Policy</a>
             </div>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
         // Estimator logic
         let estimateItems = [];
         document.getElementById('add-item-btn').addEventListener('click', () => {
@@ -298,7 +338,7 @@
                 const itemTotal = item.price * item.qty;
                 total += itemTotal;
                 breakdownText += `${item.qty}x ${item.name} ($${itemTotal.toFixed(2)})\n`;
-                listEl.innerHTML += `<li class="flex justify-between items-center px-4 py-3"><span>${item.qty}x ${item.name}</span><div class="flex items-center gap-6"><span class="font-semibold">$${itemTotal.toFixed(2)}</span><button type="button" onclick="removeItem(${index})" class="text-red-500 font-bold px-2 py-1 bg-red-50 rounded text-xs">Remove</button></div></li>`;
+                listEl.innerHTML += `<li class="flex justify-between items-center px-4 py-3"><span>${item.qty}x ${item.name}</span><div class="flex items-center gap-4 md:gap-6"><span class="font-semibold">$${itemTotal.toFixed(2)}</span><button type="button" onclick="removeItem(${index})" class="text-red-500 font-bold px-2 py-1 bg-red-50 rounded text-xs">Remove</button></div></li>`;
             });
             displayEl.textContent = '$' + total.toFixed(2);
             hiddenCostInput.value = '$' + total.toFixed(2);

@@ -22,24 +22,40 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6.75h4.5a1.5 1.5 0 0 1 1.5 1.5v1.5" />
                         </svg>
                     </div>
-                    <h1 class="text-2xl font-bold tracking-tighter uppercase">Pandey Press</h1>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-tighter uppercase">Pandey Press</h1>
                 </a>
+
                 <div class="hidden md:flex space-x-8 items-center">
-    <a href="index.html#how-it-works" class="text-gray-600 hover:text-black font-medium transition-colors">How It Works</a>
-    <a href="index.html#pricing" class="text-gray-600 hover:text-black font-medium transition-colors">Price List</a>
-    <a href="#" class="text-black font-semibold cursor-default">Service Policy</a>
-    <a href="index.html#book-now" class="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 transition-colors font-semibold">Book Now</a>
-</div>
+                    <a href="index.html#how-it-works" class="text-gray-600 hover:text-black font-medium transition-colors">How It Works</a>
+                    <a href="index.html#pricing" class="text-gray-600 hover:text-black font-medium transition-colors">Price List</a>
+                    <a href="#" class="text-black font-semibold cursor-default">Service Policy</a>
+                    <a href="index.html#book-now" class="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 transition-colors font-semibold">Book Now</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-black focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-4">
+            <a href="index.html#how-it-works" class="block text-gray-600 font-medium py-2">How It Works</a>
+            <a href="index.html#pricing" class="block text-gray-600 font-medium py-2">Price List</a>
+            <a href="#" class="block text-black font-bold py-2">Service Policy</a>
+            <a href="index.html#book-now" class="block bg-black text-white text-center px-6 py-3 rounded-md font-bold">Book Now</a>
         </div>
     </nav>
 
-    <header class="bg-black text-white py-16 px-4 text-center">
-        <h1 class="text-4xl font-extrabold uppercase tracking-tight">Service Policy</h1>
+    <header class="bg-black text-white py-12 md:py-16 px-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-extrabold uppercase tracking-tight">Service Policy</h1>
         <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Please review our terms and conditions regarding garment care, drop-offs, and liability.</p>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-16 bg-white shadow-xl my-10 rounded-lg border border-gray-200">
+    <main class="max-w-4xl mx-auto px-6 py-12 bg-white shadow-xl my-6 md:my-10 rounded-lg border border-gray-200">
         <div class="space-y-8 text-gray-800 leading-relaxed">
 
             <section>
@@ -143,9 +159,9 @@
 
             <hr class="my-8 border-gray-200">
 
-            <section class="text-center">
+            <section class="text-center px-2">
                 <p class="text-lg font-bold mb-2">For further questions or clarifications, please contact us:</p>
-                <p class="text-gray-700">Email: <a href="mailto:admin@pandeypress.com" class="text-black underline">admin@pandeypress.com</a></p>
+                <p class="text-gray-700">Email: <a href="mailto:info@pandeypress.com" class="text-black font-semibold underline">info@pandeypress.com</a></p>
                 <p class="text-gray-700 mt-4 italic">Thank you for choosing Pandey Press for your ironing needs. We look forward to serving you!</p>
             </section>
 
@@ -154,7 +170,7 @@
 
     <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
                 <div>
                     <h5 class="text-xl font-bold uppercase mb-4">Pandey Press</h5>
                     <p class="text-gray-600">Professional domestic ironing services bringing quality and crisp perfection to Melbourne.</p>
@@ -169,7 +185,7 @@
                 <div>
                     <h5 class="text-xl font-bold uppercase mb-4">Contact & Location</h5>
                     <ul class="text-gray-600 space-y-2">
-                        <li>Email: <a href="mailto:admin@pandeypress.com" class="hover:text-black">admin@pandeypress.com</a></li>
+                        <li>Email: <a href="mailto:info@pandeypress.com" class="hover:text-black transition-colors">info@pandeypress.com</a></li>
                         <li>Location: 14 Ernest Street</li>
                         <li>Blackburn, VIC 3130</li>
                     </ul>
@@ -177,10 +193,27 @@
             </div>
             <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
                 <p>&copy; 2026 Pandey Press. All Rights Reserved.</p>
-                <a href="service-policy.html" class="mt-4 md:mt-0 hover:text-black transition-colors font-medium">Read Our Service Policy</a>
+                <a href="service-policy.html" class="mt-4 md:mt-0 hover:text-black transition-colors font-medium underline">Read Our Service Policy</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            
+            // Toggle between hamburger and close icon
+            if (menu.classList.contains('hidden')) {
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+    </script>
 
 </body>
 </html>
