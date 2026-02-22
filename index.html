@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-537M57GV');</script>
     <meta name="google-site-verification" content="Io9C8mazKvB5bI2Zb2Ri3D0TDi6ztYIHxA33BrRaeRU" />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GXDS4FYN4"></script>
@@ -40,12 +35,14 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Custom Font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
         
         #mobile-menu { display: none; }
         #mobile-menu.active { display: block; }
 
+        /* Spinner for loading state */
         .spinner {
             border: 3px solid rgba(255,255,255,0.3);
             border-radius: 50%;
@@ -61,8 +58,7 @@
     </style>
 </head>
 <body class="bg-white text-black antialiased">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-537M57GV"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
@@ -114,10 +110,100 @@
         </div>
     </section>
 
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">Why Choose Us?</h3>
+                <div class="w-24 h-1 bg-black mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="px-4">
+                    <h4 class="text-xl font-bold mb-3 uppercase">Quality Guaranteed</h4>
+                    <p class="text-gray-600">Attention to detail ensures every crease is perfect. We care for your garments as if they were our own.</p>
+                </div>
+                <div class="px-4">
+                    <h4 class="text-xl font-bold mb-3 uppercase">Affordable Services</h4>
+                    <p class="text-gray-600">We provide premium quality at highly competitive prices, making professional ironing accessible.</p>
+                </div>
+                <div class="px-4">
+                    <h4 class="text-xl font-bold mb-3 uppercase">Local Convenience</h4>
+                    <p class="text-gray-600">Conveniently located in Blackburn, simply drop off your items and pick them up when they are ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-20 bg-gray-50 border-t border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">How Does It Work?</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">1</div>
+                    <h4 class="text-lg font-bold mb-2">Book Online</h4>
+                    <p class="text-gray-600 text-sm">Fill out our booking form below to get a quick estimate.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">2</div>
+                    <h4 class="text-lg font-bold mb-2">Drop Off</h4>
+                    <p class="text-gray-600 text-sm">Bring items to 14 Ernest Street, Blackburn, VIC 3130.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">3</div>
+                    <h4 class="text-lg font-bold mb-2">Pick Up</h4>
+                    <p class="text-gray-600 text-sm">Collect your fresh, crisp clothes once notified.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">Ironing Price List</h3>
+                <div class="w-24 h-1 bg-black mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-600 text-sm">Minimum charge $30.00. Drop-off/Pick-up only.</p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-black text-white">
+                            <th class="py-4 px-4 md:px-6 font-semibold uppercase text-xs md:text-sm">Garment Type</th>
+                            <th class="py-4 px-4 md:px-6 font-semibold uppercase text-xs md:text-sm text-right">Price (AUD)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Shirts / Blouses</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$3.80</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">T-shirts / Polos</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$2.50</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Pants</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$3.80</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Jeans</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$3.30</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Jumper / Pyjama / Tracksuit</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$2.90</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Shorts</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$2.00 - $2.50</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Skirt</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$2.80 - $3.50</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Dress</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$4.00 - $6.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Jacket</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$6.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Kids (Sizes 0-4)</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$1.80 - $2.20</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Kids (Sizes 5-12)</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$2.80 - $3.30</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">School Uniforms</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$3.30</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Hanky / T-Towel</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$1.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Aprons / Pillow Cases</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$1.80</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Table Cloths</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$4.00 - $7.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Bed Sheet (Single to King)</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$7.00 - $12.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-4 md:px-6 text-sm md:text-base">Doona Cover (Single to King)</td><td class="py-3 px-4 md:px-6 text-right font-medium text-sm md:text-base">$10.00 - $14.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <section id="book-now" class="py-20 bg-black text-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">Book Your Service</h3>
+                <p class="mt-4 text-gray-400">Let us know you are coming by filling out the form below.</p>
+                <p class="mt-2 text-white font-semibold text-xs md:text-sm uppercase tracking-wide px-4">Please do not drop off or pick up items until an email confirmation has been provided.</p>
             </div>
             
             <form id="booking-form" action="https://formspree.io/f/xwvnraga" method="POST" class="bg-white text-black p-6 md:p-8 rounded-lg shadow-xl mx-2">
@@ -184,7 +270,7 @@
 
                 <div class="mb-8">
                     <label class="block text-sm font-semibold mb-2" for="notes">Instructions (Optional)</label>
-                    <textarea id="notes" name="notes" rows="3" placeholder="Any specific requirements?" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-black outline-none"></textarea>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Any specific requirements or delicate items we should know about?" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-black outline-none"></textarea>
                 </div>
 
                 <button type="submit" id="submit-btn" class="w-full bg-black text-white font-bold py-4 rounded-md hover:bg-gray-800 transition-colors uppercase text-sm tracking-wide">
@@ -197,7 +283,25 @@
 
     <footer class="bg-white border-t border-gray-200 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center md:text-left">
-            <p class="text-gray-400 text-xs">&copy; 2026 Pandey Press.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h5 class="font-bold uppercase mb-4">Pandey Press</h5>
+                    <p class="text-gray-500 text-sm">Professional ironing in Blackburn, VIC.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold uppercase mb-4">Location</h5>
+                    <p class="text-gray-500 text-sm">14 Ernest Street, Blackburn, VIC 3130</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-bold uppercase mb-4 tracking-wider">Contact & Location</h5>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Email: <a href="mailto:admin@pandeypress.com" class="hover:text-black transition-colors underline decoration-gray-300">admin@pandeypress.com</a></li>
+                        <li>Location: 14 Ernest Street</li>
+                        <li>Blackburn, VIC 3130</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-gray-400 text-xs border-t pt-8">&copy; 2026 Pandey Press.</p>
         </div>
     </footer>
 
@@ -244,7 +348,7 @@
             hiddenBreakdownInput.value = breakdownText || "No items.";
         }
 
-        // --- SMART TIME LOGIC ---
+        // --- SMART TIME LOGIC (24H Format) ---
         const dateInput = document.getElementById('dropoff_date');
         const timeSelect = document.getElementById('dropoff_time_val');
         const now = new Date();
@@ -265,7 +369,7 @@
             });
         });
 
-        // --- FORMSPREE + GTM DATA LAYER LOGIC ---
+        // --- FORMSPREE AJAX REDIRECT LOGIC ---
         const form = document.getElementById("booking-form");
         const status = document.getElementById("form-status");
         const submitBtn = document.getElementById("submit-btn");
@@ -273,32 +377,40 @@
 
         async function handleSubmit(event) {
             event.preventDefault();
+            
+            // UI Loading State
             submitBtn.disabled = true;
             btnText.innerHTML = '<span class="spinner"></span> Sending...';
             
-            // --- GTM PUSH: Track the attempt ---
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'booking_submit_click',
-                'estimated_value': document.getElementById('estimated_cost_input').value
-            });
-
             const data = new FormData(event.target);
+            
             fetch(event.target.action, {
                 method: form.method,
                 body: data,
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    // --- GTM PUSH: Track success ---
-                    window.dataLayer.push({ 'event': 'booking_success' });
+                    // SUCCESS: Manually redirect to your success page
                     window.location.href = "/success.html";
                 } else {
-                    status.innerHTML = "Oops! Problem submitting form.";
-                    status.classList.remove('hidden');
-                    submitBtn.disabled = false;
-                    btnText.innerHTML = 'Submit Booking Request';
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerHTML = "Oops! There was a problem submitting your form.";
+                        }
+                        status.classList.remove('hidden');
+                        status.classList.add('text-red-500');
+                        submitBtn.disabled = false;
+                        btnText.innerHTML = 'Submit Booking Request';
+                    })
                 }
+            }).catch(error => {
+                status.innerHTML = "Oops! There was a problem connecting to the server.";
+                status.classList.remove('hidden');
+                status.classList.add('text-red-500');
+                submitBtn.disabled = false;
+                btnText.innerHTML = 'Submit Booking Request';
             });
         }
         form.addEventListener("submit", handleSubmit);
