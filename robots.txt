@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /success.html
 
-Sitemap: https://pandeypress.com/sitemap.xml
+# Direct link to your sitemap
+Sitemap: https://www.pandeypress.com/sitemap.xml
