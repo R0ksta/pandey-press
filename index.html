@@ -153,20 +153,33 @@
                 <div class="w-24 h-1 bg-black mx-auto mt-4 mb-6"></div>
                 <p class="text-gray-600 text-sm">Minimum charge $30.00. Drop-off/Pick-up only.</p>
             </div>
-            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <table class="w-full text-left border-collapse table-auto">
+
+            <div class="bg-white border border-gray-200 rounded-lg overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[500px]">
                     <thead>
                         <tr class="bg-black text-white">
-                            <th class="py-4 px-6 font-semibold uppercase text-xs">Garment Type</th>
-                            <th class="py-4 px-6 font-semibold uppercase text-xs text-right">Price (AUD)</th>
+                            <th class="py-4 px-6 font-semibold uppercase text-xs md:text-sm">Garment Type</th>
+                            <th class="py-4 px-6 font-semibold uppercase text-xs md:text-sm text-right">Price (AUD)</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200 text-sm">
-                        <tr><td class="py-3 px-6">Shirts / Blouses</td><td class="py-3 px-6 text-right font-medium">$3.80</td></tr>
-                        <tr><td class="py-3 px-6">T-shirts / Polos</td><td class="py-3 px-6 text-right font-medium">$2.50</td></tr>
-                        <tr><td class="py-3 px-6">Pants / Jeans</td><td class="py-3 px-6 text-right font-medium">$3.30 - $3.80</td></tr>
-                        <tr><td class="py-3 px-6">Dress</td><td class="py-3 px-6 text-right font-medium">$4.00 - $6.00</td></tr>
-                        <tr><td class="py-3 px-6">Bed Sheet / Doona Cover</td><td class="py-3 px-6 text-right font-medium">$7.00 - $14.00</td></tr>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Shirts / Blouses</td><td class="py-3 px-6 text-right font-medium">$3.80</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">T-shirts / Polos</td><td class="py-3 px-6 text-right font-medium">$2.50</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Pants</td><td class="py-3 px-6 text-right font-medium">$3.80</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Jeans</td><td class="py-3 px-6 text-right font-medium">$3.30</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Jumper / Pyjama / Tracksuit</td><td class="py-3 px-6 text-right font-medium">$2.90</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Shorts</td><td class="py-3 px-6 text-right font-medium">$2.00 - $2.50</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Skirt</td><td class="py-3 px-6 text-right font-medium">$2.80 - $3.50</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Dress</td><td class="py-3 px-6 text-right font-medium">$4.00 - $6.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Jacket</td><td class="py-3 px-6 text-right font-medium">$6.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Kids (Sizes 0-4)</td><td class="py-3 px-6 text-right font-medium">$1.80 - $2.20</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Kids (Sizes 5-12)</td><td class="py-3 px-6 text-right font-medium">$2.80 - $3.30</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">School Uniforms</td><td class="py-3 px-6 text-right font-medium">$3.30</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Hanky / T-Towel</td><td class="py-3 px-6 text-right font-medium">$1.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Aprons / Pillow Cases</td><td class="py-3 px-6 text-right font-medium">$1.80</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Table Cloths</td><td class="py-3 px-6 text-right font-medium">$4.00 - $7.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Bed Sheet (Single to King)</td><td class="py-3 px-6 text-right font-medium">$7.00 - $12.00</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="py-3 px-6">Doona Cover (Single to King)</td><td class="py-3 px-6 text-right font-medium">$10.00 - $14.00</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -177,7 +190,8 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">Book Your Service</h3>
-                <p class="mt-4 text-gray-400">Please do not drop off until an email confirmation is provided.</p>
+                <p class="mt-4 text-gray-400">Let us know you are coming by filling out the form below.</p>
+                <p class="mt-2 text-red-400 font-semibold text-xs md:text-sm uppercase tracking-wide px-4">Please do not drop off or pick up items until an email confirmation has been provided.</p>
             </div>
             
             <form id="booking-form" action="https://formspree.io/f/your_form_id" method="POST" class="bg-white text-black p-6 md:p-8 rounded-lg shadow-xl mx-2">
@@ -254,8 +268,12 @@
                     <p class="text-gray-500 text-sm">14 Ernest Street, Blackburn, VIC 3130</p>
                 </div>
                 <div>
-                    <h5 class="font-bold uppercase mb-4">Legal</h5>
-                    <a href="service-policy.html" class="text-gray-500 text-sm underline">Service Policy</a>
+                    <h5 class="text-lg font-bold uppercase mb-4 tracking-wider">Contact & Location</h5>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Email: <a href="mailto:info@pandeypress.com" class="hover:text-black transition-colors underline decoration-gray-300">info@pandeypress.com</a></li>
+                        <li>Location: 14 Ernest Street</li>
+                        <li>Blackburn, VIC 3130</li>
+                    </ul>
                 </div>
             </div>
             <p class="text-gray-400 text-xs border-t pt-8">&copy; 2026 Pandey Press.</p>
@@ -305,7 +323,7 @@
             hiddenBreakdownInput.value = breakdownText || "No items.";
         }
 
-        // DATE/TIME LOGIC
+        // --- SMART TIME LOGIC (24H Format) ---
         const dateInput = document.getElementById('dropoff_date');
         const timeSelect = document.getElementById('dropoff_time_val');
         const now = new Date();
