@@ -1,0 +1,93 @@
+/* Pandey Press - Global Stylesheet
+  This file handles all layout, colors, and button behaviors.
+*/
+
+/* 1. RESET & BASE STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-blue: #2563eb; 
+  --call-green: #16a34a; 
+  --white: #ffffff;
+  --dark-text: #1f2937;
+  --light-bg: #f3f4f6;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-text);
+  background-color: var(--white);
+}
+
+/* 2. NAVIGATION & LAYOUT HELPERS */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 20px 0;
+  background: var(--white);
+  border-bottom: 1px solid #ddd;
+}
+
+section {
+  padding: 50px 0;
+}
+
+/* 3. UNIVERSAL BUTTON STYLES (The Inversion Logic) */
+/* This targets every <button> and any link with the class .btn */
+button, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all var(--transition);
+  /* 2px border prevents the button from shaking on hover */
+  border: 2px solid var(--primary-blue);
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+/* THE INVERSION: Hover state for all standard buttons */
+button:hover, .btn:hover {
+  background-color: transparent;
+  color: var(--primary-blue);
+}
+
+/* THE CALL BUTTON: Specific color but same inversion logic */
+.btn-call {
+  background-color: var(--call-green);
+  border-color: var(--call-green);
+  color: var(--white);
+}
+
+.btn-call:hover {
+  background-color: transparent;
+  color: var(--call-green);
+  border-color: var(--call-green);
+}
+
+/* 4. TYPOGRAPHY */
+h1, h2, h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
