@@ -55,7 +55,6 @@
         /* --- Global Button Hover Inversion --- */
         
         /* Standard Black Buttons (Invert to white background/black text) */
-        /* UPDATED: Added a default transparent border so the size doesn't jump when the black border is applied */
         button, 
         a[href="#book-now"], 
         #add-item-btn, 
@@ -295,6 +294,7 @@
                         <span class="font-semibold text-sm text-gray-600">Estimated Total:</span>
                         <span class="text-xl md:text-2xl font-bold text-black" id="estimate-display">$0.00</span>
                     </div>
+                    <p id="minimum-warning" class="text-xs text-red-500 mt-2 font-bold hidden">Minimum booking value of $30.00 required to submit.</p>
                     <p class="text-xs text-gray-500 mt-2">Minimum charge is $30.00.</p>
                     <p class="text-xs text-gray-500 mt-2">Only cash or bank transfer is accepted during drop off.</p>
                 </div>
@@ -393,6 +393,8 @@
 
         // Estimator logic
         let estimateItems = [];
+        let currentTotal = 0; // Track total globally for validation
+
         document.getElementById('add-item-btn').addEventListener('click', () => {
             const select = document.getElementById('item-select');
             const qtyInput = document.getElementById('item-qty');
@@ -405,27 +407,38 @@
                 qtyInput.value = 1; 
             }
         });
+
         function removeItem(index) {
             estimateItems.splice(index, 1);
             updateEstimator();
         }
+
         function updateEstimator() {
             const listEl = document.getElementById('estimator-list');
             const displayEl = document.getElementById('estimate-display');
             const hiddenCostInput = document.getElementById('estimated_cost_input');
             const hiddenBreakdownInput = document.getElementById('estimator_breakdown_input');
+            const minWarning = document.getElementById('minimum-warning');
+            
             listEl.innerHTML = '';
-            let total = 0;
+            currentTotal = 0;
             let breakdownText = '';
+            
             estimateItems.forEach((item, index) => {
                 const itemTotal = item.price * item.qty;
-                total += itemTotal;
+                currentTotal += itemTotal;
                 breakdownText += `${item.qty}x ${item.name} ($${itemTotal.toFixed(2)})\n`;
                 listEl.innerHTML += `<li class="flex justify-between items-center px-4 py-3"><span>${item.qty}x ${item.name}</span><div class="flex items-center gap-4 md:gap-6"><span class="font-semibold">$${itemTotal.toFixed(2)}</span><button type="button" onclick="removeItem(${index})" class="text-red-500 font-bold px-2 py-1 bg-red-50 rounded text-xs border-none !bg-transparent hover:!bg-red-50">Remove</button></div></li>`;
             });
-            displayEl.textContent = '$' + total.toFixed(2);
-            hiddenCostInput.value = '$' + total.toFixed(2);
+            
+            displayEl.textContent = '$' + currentTotal.toFixed(2);
+            hiddenCostInput.value = '$' + currentTotal.toFixed(2);
             hiddenBreakdownInput.value = breakdownText || "No items.";
+
+            // Hide warning if they reach the minimum while adding items
+            if (currentTotal >= 30) {
+                minWarning.classList.add('hidden');
+            }
         }
 
         // --- SMART TIME LOGIC ---
@@ -497,9 +510,22 @@
         const submitBtn = document.getElementById("submit-btn");
         const btnText = document.getElementById("btn-text");
         const status = document.getElementById("form-status");
+        const minWarning = document.getElementById('minimum-warning');
 
         form.addEventListener("submit", async function(event) {
             event.preventDefault(); // Stop normal form submission
+
+            // --- MINIMUM PRICE VALIDATION ---
+            if (currentTotal < 30) {
+                minWarning.classList.remove('hidden');
+                status.innerHTML = "Error: Minimum charge is $30.00. Please add more items.";
+                status.classList.remove("hidden");
+                status.classList.add("text-red-600");
+                
+                // Scroll the warning into view so the user sees why it failed
+                minWarning.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return; 
+            }
             
             // UI Feedback: Disable button and show spinner
             submitBtn.disabled = true;
@@ -520,10 +546,8 @@
                 });
 
                 if (response.ok) {
-                    // SUCCESS: Manually redirect to your success page
                     window.location.href = "success.html";
                 } else {
-                    // ERROR from Formspree
                     const data = await response.json();
                     if (Object.hasOwn(data, 'errors')) {
                         status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
@@ -534,7 +558,6 @@
                     resetSubmitButton();
                 }
             } catch (error) {
-                // Network Error
                 status.innerHTML = "Oops! Connection error. Please try again later.";
                 status.classList.add("text-red-600");
                 resetSubmitButton();
