@@ -2,6 +2,14 @@
   This file handles all layout, colors, and button behaviors.
 */
 
+/* 0. PERFORMANCE OPTIMIZATION */
+/* Ensuring fonts swap immediately to improve PageSpeed Insights */
+@font-face {
+  font-family: 'Segoe UI';
+  font-display: swap;
+  src: local('Segoe UI');
+}
+
 /* 1. RESET & BASE STYLES */
 * {
   box-sizing: border-box;
