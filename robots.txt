@@ -18,4 +18,4 @@ User-agent: Applebot
 Allow: /
 
 # Sitemaps help search engines find your pages faster
-Sitemap: https://www.pandeypress.com/sitemap.xml
+Sitemap: https://www.primepress.com.au/sitemap.xml
