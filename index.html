@@ -10,6 +10,19 @@
     <meta name="keywords" content="ironing services Blackburn, clothes pressing Melbourne, professional ironing VIC 3130, laundry services Blackburn, domestic ironing, laundry help Melbourne">
     <link rel="canonical" href="https://primepress.com.au/">
 
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-537M57GV');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GXDS4FYN4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5GXDS4FYN4');
+    </script>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
@@ -130,7 +143,8 @@
     </style>
 </head>
 <body class="bg-white text-black antialiased">
-
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-537M57GV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
@@ -420,3 +434,105 @@
             <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm">
                 <p>&copy; 2026 Prime Press. All Rights Reserved.</p>
                 <a href="service-policy.html" target="_blank" class="mt-4 md:mt-0 hover:text-black transition-colors font-medium underline decoration-gray-200">Read Our Service Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Booking Logic & Calculator
+        const itemSelect = document.getElementById('item-select');
+        const itemQty = document.getElementById('item-qty');
+        const addItemBtn = document.getElementById('add-item-btn');
+        const estimatorList = document.getElementById('estimator-list');
+        const estimateDisplay = document.getElementById('estimate-display');
+        const minWarning = document.getElementById('minimum-warning');
+        const costInput = document.getElementById('estimated_cost_input');
+        const breakdownInput = document.getElementById('estimator_breakdown_input');
+        const submitBtn = document.getElementById('submit-btn');
+
+        let selectedItems = [];
+
+        addItemBtn.addEventListener('click', () => {
+            const price = parseFloat(itemSelect.value);
+            const name = itemSelect.options[itemSelect.selectedIndex].getAttribute('data-name');
+            const qty = parseInt(itemQty.value);
+            
+            selectedItems.push({ name, price, qty });
+            updateEstimator();
+        });
+
+        function updateEstimator() {
+            estimatorList.innerHTML = '';
+            let total = 0;
+            let breakdownText = '';
+
+            selectedItems.forEach((item, index) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                breakdownText += `${item.name} x ${item.qty} ($${itemTotal.toFixed(2)}), `;
+
+                const li = document.createElement('li');
+                li.className = 'flex justify-between py-2 px-4';
+                li.innerHTML = `<span>${item.name} x ${item.qty}</span> <button type="button" class="text-red-500 font-bold ml-2" onclick="removeItem(${index})">×</button>`;
+                estimatorList.appendChild(li);
+            });
+
+            estimateDisplay.innerText = `$${total.toFixed(2)}`;
+            costInput.value = `$${total.toFixed(2)}`;
+            breakdownInput.value = breakdownText;
+
+            if (total < 30 && total > 0) {
+                minWarning.classList.remove('hidden');
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                minWarning.classList.add('hidden');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        window.removeItem = (index) => {
+            selectedItems.splice(index, 1);
+            updateEstimator();
+        };
+
+        // Drop-off Time Logic based on date
+        const dateInput = document.getElementById('dropoff_date');
+        const timeSelect = document.getElementById('dropoff_time_val');
+        const hoursHint = document.getElementById('hours-hint');
+
+        dateInput.addEventListener('change', (e) => {
+            const date = new Date(e.target.value);
+            const day = date.getUTCDay(); // 0=Sun, 6=Sat
+            timeSelect.innerHTML = '';
+            
+            let hours = [];
+            if (day >= 1 && day <= 5) { // Mon-Fri
+                hours = ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30"];
+                hoursHint.innerText = "Available Mon-Fri: 5 PM – 9 PM";
+            } else { // Sat-Sun
+                hours = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+                hoursHint.innerText = "Available Sat-Sun: 9 AM – 5 PM";
+            }
+
+            hours.forEach(h => {
+                const opt = document.createElement('option');
+                opt.value = h;
+                opt.innerText = h;
+                timeSelect.appendChild(opt);
+            });
+        });
+
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    </script>
+</body>
+</html>
