@@ -463,6 +463,7 @@
         const costInput = document.getElementById('estimated_cost_input');
         const breakdownInput = document.getElementById('estimator_breakdown_input');
         const submitBtn = document.getElementById('submit-btn');
+        const bookingForm = document.getElementById('booking-form');
 
         let selectedItems = [];
 
@@ -540,6 +541,14 @@
 
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today);
+
+        // Double-click Prevention & Spinner Logic
+        bookingForm.addEventListener('submit', function() {
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-70', 'cursor-wait');
+            const btnText = document.getElementById('btn-text');
+            btnText.innerHTML = '<span class="spinner"></span>Processing...';
+        });
     </script>
 </body>
 </html>
